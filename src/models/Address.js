@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema();
+const { Schema, model } = require('mongoose');
 
 const Address = new Schema({
   zip_code: {
@@ -24,4 +23,4 @@ const Address = new Schema({
   },
 });
 
-mongoose.model('addresses', Address);
+module.exports = model('addresses', Address);

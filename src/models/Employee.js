@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const Client = new Schema({
+const Employee = new Schema({
   name: {
     type: String,
     required: true,
@@ -29,11 +29,6 @@ const Client = new Schema({
     ref: 'services',
     required: true,
   },
-  address_id: {
-    type: Schema.Types.ObjectId,
-    ref: 'addresses',
-    required: true,
-  },
 });
 
-module.exports = model('clients', Client);
+module.exports = model('employees', Employee);

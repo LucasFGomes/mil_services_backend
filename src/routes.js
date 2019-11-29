@@ -6,7 +6,7 @@ const ServiceController = require('./controllers/ServiceController');
 const ClientController = require('./controllers/ClientController');
 const EmployeeController = require('./controllers/EmployeeController');
 
-routes.get('/auth', AuthController.authenticate);
+routes.post('/auth', AuthController.authenticate);
 
 routes.get('/services', ServiceController.index);
 routes.post('/services', ServiceController.create);

@@ -8,16 +8,16 @@ module.exports = {
     if (type_user && type_user.toLowerCase() === "client") {
       Client.findOne({ email, password }).then((client) => {
         if (client) {
-          return res.json({ authentication: true });
+          return res.json(client);
         }
-        return res.json({ authentication: false });
+        return res.json(client);
       });
     } else if (type_user && type_user.toLowerCase() === "employee") {
       Employee.findOne({ email, password }).then((employee) => {
         if (employee) {
-          return res.json({ authentication: true });
+          return res.json(employee);
         }
-        return res.json({ authentication: false });
+        return res.json(employee);
       });
     }
   }

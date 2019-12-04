@@ -13,6 +13,7 @@ routes.post('/services', ServiceController.create);
 
 routes.get('/clients', ClientController.index);
 routes.post('/clients', ClientController.create);
+routes.put('/clients/:id', ClientController.update);
 routes.delete('/clients', ClientController.delete);
 
 routes.get('/employees', EmployeeController.index);

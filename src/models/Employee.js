@@ -27,7 +27,6 @@ const Employee = new Schema({
   service_id: {
     type: Schema.Types.ObjectId,
     ref: 'services',
-    required: true,
   },
 });
 

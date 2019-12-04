@@ -27,7 +27,6 @@ const Client = new Schema({
   service_id: {
     type: Schema.Types.ObjectId,
     ref: 'services',
-    required: true,
   },
   address_id: {
     type: Schema.Types.ObjectId,

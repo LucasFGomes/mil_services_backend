@@ -54,6 +54,25 @@ module.exports = {
     }
   },
 
+  async update(req, res) {
+    const { id } = req.params;
+    const { email, phone, password } = req.body.data;
+
+    Client.findOne({ _id: id }).then((client) => {
+      client.email = email;
+      client.phone = phone;
+      client.password = password;
+
+      client.save().then((client) => {
+        console.log('Cliente atualizado com sucesso!');
+        res.json({ message: 'Dados atualizados com sucesso.' });
+      })
+    }).catch((error) => {
+      console.log('Error: ', error);
+      res.json({ message: 'Erro ao atualizar seus dados.' });
+    })
+  },
+
   async delete(req, res) {
 
     const { cpf, email, password } = req.body;
@@ -62,7 +81,7 @@ module.exports = {
       if (result.deletedCount == 1) {
         return res.json({ message: "Deletado com sucesso" })
       }
-      return res.json({ message: "Cliente não encontrado!" })
+      return res.json({ message: "Usuário não encontrado!" })
     }).catch((error) => {
       return res.json({ error });
     });
